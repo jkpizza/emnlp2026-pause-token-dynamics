@@ -1,0 +1,14 @@
+# Separate from training: LightEval 0.13 requires vLLM <0.10.2.
+torch==2.7.1
+vllm==0.10.1.1
+lighteval[vllm]==0.13.0
+transformers==4.57.3
+tokenizers==0.22.2
+datasets==4.8.4
+fsspec==2025.9.0
+s3fs==2025.9.0
+accelerate==1.13.0
+numpy==2.2.6
+pandas==2.3.3
+pyarrow==24.0.0
+PyYAML==6.0.3

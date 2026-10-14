@@ -1,0 +1,32 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.cache/
+.venv*/
+venv/
+*.egg-info/
+build/
+dist/
+.coverage
+htmlcov/
+.env
+.env.*
+wandb/
+artifacts/
+outputs/
+checkpoints/
+*.log
+*.safetensors
+*.pt
+*.pth
+*.bin
+.DS_Store
+.vscode/
+# Reference manuscript stays local; it is not part of the code release.
+*.pdf
+# Local experiment notes and development checks are not part of the release.
+docs
+tests
+REPRODUCTION_PLAN.md

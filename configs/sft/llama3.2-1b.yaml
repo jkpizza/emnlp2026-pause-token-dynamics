@@ -1,0 +1,71 @@
+model: meta-llama/Llama-3.2-1B-Instruct
+dataset:
+  repo_id: saramal/Qwen3-4B-rollout
+  revision: 04ab3708f9af02a18aa06a568607ae0bb2afff04
+  pause_token_id: 58040
+  tokenizer_single_word: false
+  tokenizer_special: true
+training:
+  pretrain: meta-llama/Llama-3.2-1B-Instruct
+  max_epochs: 3
+  learning_rate: 1e-05
+  train_batch_size: 32
+  max_len: 2048
+  lora_rank: 0
+  lora_alpha: 64
+  lora_dropout: 0.05
+  lora_embedding_train_mode: embedding_lora
+  lr_scheduler: cosine_with_min_lr
+  lr_warmup_ratio: 0.03
+  pause_init_method: mean
+  prompt_type: llama3
+  seed: 42
+  save_steps: 1000
+  eval_steps: -1
+  logging_steps: 20
+  adam_betas:
+  - 0.9
+  - 0.95
+  l2: 0
+  max_norm: 1
+  zero_stage: 2
+  bf16: true
+  gradient_checkpointing: true
+  packing_samples: true
+  target_modules: all-linear
+  attn_implementation: flash_attention_2
+  max_ckpt_num: 3
+  max_ckpt_mem: 1e+08
+  full_determinism: false
+  gradient_checkpointing_use_reentrant: false
+variants:
+  none:
+    training:
+      micro_train_batch_size: 16
+      predict_pause_tokens: false
+    holdout_eval: false
+  step:
+    training:
+      micro_train_batch_size: 16
+      predict_pause_tokens: false
+    holdout_eval: false
+  append:
+    training:
+      micro_train_batch_size: 16
+      predict_pause_tokens: false
+    holdout_eval: false
+  random:
+    training:
+      micro_train_batch_size: 16
+      predict_pause_tokens: false
+    holdout_eval: false
+  dit:
+    training:
+      micro_train_batch_size: 16
+      predict_pause_tokens: false
+    holdout_eval: false
+  step_unmasked:
+    training:
+      micro_train_batch_size: 8
+      predict_pause_tokens: true
+    holdout_eval: false

@@ -1,0 +1,64 @@
+model: Qwen/Qwen3-1.7B-Base
+dataset:
+  repo_id: jkpizza/oci-filt
+  revision: 81d8c995ddca528d726894b9a024bdbf22f61d2a
+  pause_token_id: 56940
+  tokenizer_single_word: false
+  tokenizer_special: false
+  input_key: problem
+  output_key: solution
+training:
+  pretrain: Qwen/Qwen3-1.7B-Base
+  max_epochs: 3
+  learning_rate: 5.0e-07
+  train_batch_size: 32
+  max_len: 8192
+  lora_rank: 0
+  lora_alpha: 16
+  lora_dropout: 0.05
+  lr_scheduler: cosine_with_min_lr
+  lr_warmup_ratio: 0.03
+  pause_init_method: mean
+  prompt_type: qwen2-code
+  seed: 42
+  eval_steps: 1000
+  logging_steps: 20
+  adam_betas:
+  - 0.9
+  - 0.95
+  l2: 0
+  max_norm: 1
+  zero_stage: 2
+  bf16: true
+  gradient_checkpointing: true
+  target_modules: all-linear
+  attn_implementation: flash_attention_2
+  max_ckpt_num: 3
+  max_ckpt_mem: 1e+08
+  full_determinism: false
+  gradient_checkpointing_use_reentrant: false
+  lora_embedding_train_mode: embedding_lora
+  micro_train_batch_size: 1
+  packing_samples: true
+  save_steps: 1000
+  predict_pause_tokens: false
+variants:
+  none:
+    training: {}
+    holdout_eval: true
+  step:
+    training: {}
+    holdout_eval: true
+  append:
+    training: {}
+    holdout_eval: true
+  random:
+    training: {}
+    holdout_eval: true
+  dit:
+    training: {}
+    holdout_eval: true
+  step_unmasked:
+    training:
+      predict_pause_tokens: true
+    holdout_eval: true

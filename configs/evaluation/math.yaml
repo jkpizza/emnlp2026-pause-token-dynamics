@@ -1,0 +1,16 @@
+dataset: evaluation/eval_data
+temperature: 0.0
+top_p: 1.0
+eval_k: 1
+seed: 42
+pause_token: <|PAUSE|>
+stages:
+  sft:
+    max_new_tokens: 1024
+    prompt_max_len: 2048
+    repetition_penalty: 1.0
+  grpo:
+    max_new_tokens: 2048
+    prompt_max_len: 1024
+    max_len: 3072
+    repetition_penalty: 1.05

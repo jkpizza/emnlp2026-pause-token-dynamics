@@ -1,0 +1,10 @@
+Pause Token Reproduction
+
+This repository contains a modified subset of OpenRLHF.
+Original project: https://github.com/OpenRLHF/OpenRLHF
+Copyright OpenRLHF contributors. Licensed under the Apache License, Version 2.0.
+The original license is retained in LICENSE.
+
+Modifications retain masked pause SFT, posthoc pause GRPO, benchmark evaluation,
+and the associated experiment configurations. Unrelated training algorithms and
+research prototypes have been removed.

@@ -1,0 +1,31 @@
+# Install Python 3.10 and torch from the CUDA 12.8 wheel index first (README).
+torch==2.9.0
+vllm==0.11.2
+transformers==4.57.3
+tokenizers==0.22.2
+deepspeed==0.18.3
+ray[default]==2.54.0
+peft==0.14.0
+accelerate==1.12.0
+datasets==4.8.5
+fsspec==2025.9.0
+torchdata==0.11.0
+numpy==2.2.6
+pyarrow==23.0.0
+pandas==2.3.3
+matplotlib==3.10.9
+PyYAML==6.0.3
+wandb==0.24.1
+tensorboard==2.20.0
+jsonlines==4.0.0
+sympy==1.14.0
+# Historical evaluation environment; changing symbolic parsers can change scores.
+antlr4-python3-runtime==4.13.2
+latex2sympy2-extended==1.0.6
+regex==2026.1.15
+requests==2.32.5
+tabulate==0.9.0
+tqdm==4.67.2
+einops==0.8.2
+sentencepiece==0.2.1
+# Install FlashAttention 2.8.3 after torch with --no-build-isolation.

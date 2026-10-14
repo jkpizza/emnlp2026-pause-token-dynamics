@@ -1,0 +1,2 @@
+# Default environment: training and mathematical benchmark evaluation.
+-r requirements/train.txt

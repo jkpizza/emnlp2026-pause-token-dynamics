@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pause-token-reproduction"
+version = "0.1.0"
+description = "Masked boundary pause SFT and posthoc GRPO experiments"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+dependencies = ["PyYAML>=6,<7", "numpy>=1.26,<3"]
+
+[tool.setuptools.packages.find]
+include = ["openrlhf*", "reproduction*", "evaluation*", "wandb_auc_analysis*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+markers = ["gpu: requires a CUDA GPU and the training environment"]
+
+[tool.ruff]
+line-length = 119

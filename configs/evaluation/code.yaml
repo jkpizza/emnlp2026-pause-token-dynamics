@@ -1,0 +1,10 @@
+temperature: 0.0
+top_p: 1.0
+repetition_penalty: 1.0
+seed: 42
+prompt_max_len: 2048
+max_new_tokens: 8192
+max_len: 10240
+pause_token: <|PAUSE|>
+evalplus_parallel: 4
+evalplus_cache: artifacts/evalplus

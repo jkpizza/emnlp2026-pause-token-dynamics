@@ -1,0 +1,8 @@
+runs:
+  qwen3-1.7b-normal: cml_rec_nlp/openrlhf_pause_grpo/9ylycz5d
+  qwen3-1.7b-pause: cml_rec_nlp/openrlhf_pause_grpo/mged0gt1
+  qwen3-4b-normal: cml_rec_nlp/openrlhf_pause_grpo/ifnmbx54
+  qwen3-4b-pause: cml_rec_nlp/openrlhf_pause_grpo/fzpy1uc8
+metrics:
+  - train/reward
+  - eval/gsm8k/pass_at_1
